@@ -20,6 +20,12 @@
 		F3C41BA129F67B59004ACA83 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F3C41BA029F67B59004ACA83 /* SnapKit */; };
 		F3C41BA429F67BE0004ACA83 /* UICustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C41BA329F67BE0004ACA83 /* UICustomTextField.swift */; };
 		F3C41BA729F67C07004ACA83 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C41BA629F67C07004ACA83 /* UIColorExtensions.swift */; };
+		F3C41BAA29F68644004ACA83 /* MainScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C41BA929F68644004ACA83 /* MainScreenAssembly.swift */; };
+		F3C41BAC29F68654004ACA83 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C41BAB29F68654004ACA83 /* MainScreenView.swift */; };
+		F3C41BAE29F6865E004ACA83 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C41BAD29F6865E004ACA83 /* MainScreenViewController.swift */; };
+		F3C41BB029F68665004ACA83 /* MainScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C41BAF29F68665004ACA83 /* MainScreenPresenter.swift */; };
+		F3C41BB229F6867F004ACA83 /* MainScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C41BB129F6867F004ACA83 /* MainScreenInteractor.swift */; };
+		F3C41BB429F68686004ACA83 /* MainScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C41BB329F68686004ACA83 /* MainScreenRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +43,12 @@
 		F3C41B9D29F67A32004ACA83 /* SignUpScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenAssembly.swift; sourceTree = "<group>"; };
 		F3C41BA329F67BE0004ACA83 /* UICustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomTextField.swift; sourceTree = "<group>"; };
 		F3C41BA629F67C07004ACA83 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		F3C41BA929F68644004ACA83 /* MainScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenAssembly.swift; sourceTree = "<group>"; };
+		F3C41BAB29F68654004ACA83 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
+		F3C41BAD29F6865E004ACA83 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
+		F3C41BAF29F68665004ACA83 /* MainScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenPresenter.swift; sourceTree = "<group>"; };
+		F3C41BB129F6867F004ACA83 /* MainScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenInteractor.swift; sourceTree = "<group>"; };
+		F3C41BB329F68686004ACA83 /* MainScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +126,7 @@
 			children = (
 				F3C41B8E29F678CC004ACA83 /* Storyboards */,
 				F3C41B8C29F678B6004ACA83 /* SignUpScreen */,
+				F3C41BA829F6862F004ACA83 /* MainScreen */,
 				F3C41BA229F67BCD004ACA83 /* CutomViews */,
 				F3C41BA529F67BEF004ACA83 /* Extensions */,
 			);
@@ -165,6 +178,19 @@
 				F3C41BA629F67C07004ACA83 /* UIColorExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F3C41BA829F6862F004ACA83 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F3C41BA929F68644004ACA83 /* MainScreenAssembly.swift */,
+				F3C41BAB29F68654004ACA83 /* MainScreenView.swift */,
+				F3C41BAD29F6865E004ACA83 /* MainScreenViewController.swift */,
+				F3C41BAF29F68665004ACA83 /* MainScreenPresenter.swift */,
+				F3C41BB129F6867F004ACA83 /* MainScreenInteractor.swift */,
+				F3C41BB329F68686004ACA83 /* MainScreenRouter.swift */,
+			);
+			path = MainScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,11 +270,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3C41B7B29F675EB004ACA83 /* SignUpScreenViewController.swift in Sources */,
+				F3C41BAE29F6865E004ACA83 /* MainScreenViewController.swift in Sources */,
+				F3C41BAA29F68644004ACA83 /* MainScreenAssembly.swift in Sources */,
 				F3C41B7729F675EB004ACA83 /* AppDelegate.swift in Sources */,
 				F3C41B9A29F67A22004ACA83 /* SignUpScreenInteractor.swift in Sources */,
+				F3C41BB229F6867F004ACA83 /* MainScreenInteractor.swift in Sources */,
 				F3C41B9E29F67A32004ACA83 /* SignUpScreenAssembly.swift in Sources */,
+				F3C41BB429F68686004ACA83 /* MainScreenRouter.swift in Sources */,
 				F3C41B9629F679FF004ACA83 /* SignUpScreenView.swift in Sources */,
 				F3C41B9C29F67A2A004ACA83 /* SignUpScreenRouter.swift in Sources */,
+				F3C41BAC29F68654004ACA83 /* MainScreenView.swift in Sources */,
+				F3C41BB029F68665004ACA83 /* MainScreenPresenter.swift in Sources */,
 				F3C41B9829F67A13004ACA83 /* SignUpScreenPresenter.swift in Sources */,
 				F3C41B7929F675EB004ACA83 /* SceneDelegate.swift in Sources */,
 				F3C41BA429F67BE0004ACA83 /* UICustomTextField.swift in Sources */,
