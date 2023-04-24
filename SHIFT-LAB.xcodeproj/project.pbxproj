@@ -26,6 +26,9 @@
 		F3C41BB029F68665004ACA83 /* MainScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C41BAF29F68665004ACA83 /* MainScreenPresenter.swift */; };
 		F3C41BB229F6867F004ACA83 /* MainScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C41BB129F6867F004ACA83 /* MainScreenInteractor.swift */; };
 		F3C41BB429F68686004ACA83 /* MainScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C41BB329F68686004ACA83 /* MainScreenRouter.swift */; };
+		F3C41BB629F688EF004ACA83 /* MainScreenCompetitionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C41BB529F688EF004ACA83 /* MainScreenCompetitionCollectionViewCell.swift */; };
+		F3C41BB929F68B63004ACA83 /* SFProText-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3C41BB829F68B63004ACA83 /* SFProText-Medium.ttf */; };
+		F3C41BBB29F6B4D0004ACA83 /* SFProText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3C41BBA29F6B4D0004ACA83 /* SFProText-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +52,9 @@
 		F3C41BAF29F68665004ACA83 /* MainScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenPresenter.swift; sourceTree = "<group>"; };
 		F3C41BB129F6867F004ACA83 /* MainScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenInteractor.swift; sourceTree = "<group>"; };
 		F3C41BB329F68686004ACA83 /* MainScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenRouter.swift; sourceTree = "<group>"; };
+		F3C41BB529F688EF004ACA83 /* MainScreenCompetitionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCompetitionCollectionViewCell.swift; sourceTree = "<group>"; };
+		F3C41BB829F68B63004ACA83 /* SFProText-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Medium.ttf"; sourceTree = "<group>"; };
+		F3C41BBA29F6B4D0004ACA83 /* SFProText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,7 @@
 		F3C41B8B29F67616004ACA83 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F3C41BB729F68B4F004ACA83 /* Fonts */,
 				F3C41B7F29F675EF004ACA83 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -184,13 +191,23 @@
 			isa = PBXGroup;
 			children = (
 				F3C41BA929F68644004ACA83 /* MainScreenAssembly.swift */,
-				F3C41BAB29F68654004ACA83 /* MainScreenView.swift */,
 				F3C41BAD29F6865E004ACA83 /* MainScreenViewController.swift */,
+				F3C41BAB29F68654004ACA83 /* MainScreenView.swift */,
+				F3C41BB529F688EF004ACA83 /* MainScreenCompetitionCollectionViewCell.swift */,
 				F3C41BAF29F68665004ACA83 /* MainScreenPresenter.swift */,
 				F3C41BB129F6867F004ACA83 /* MainScreenInteractor.swift */,
 				F3C41BB329F68686004ACA83 /* MainScreenRouter.swift */,
 			);
 			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		F3C41BB729F68B4F004ACA83 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F3C41BBA29F6B4D0004ACA83 /* SFProText-Regular.ttf */,
+				F3C41BB829F68B63004ACA83 /* SFProText-Medium.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +274,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3C41BB929F68B63004ACA83 /* SFProText-Medium.ttf in Resources */,
 				F3C41B8329F675EF004ACA83 /* LaunchScreen.storyboard in Resources */,
 				F3C41B8029F675EF004ACA83 /* Assets.xcassets in Resources */,
+				F3C41BBB29F6B4D0004ACA83 /* SFProText-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +293,7 @@
 				F3C41BAA29F68644004ACA83 /* MainScreenAssembly.swift in Sources */,
 				F3C41B7729F675EB004ACA83 /* AppDelegate.swift in Sources */,
 				F3C41B9A29F67A22004ACA83 /* SignUpScreenInteractor.swift in Sources */,
+				F3C41BB629F688EF004ACA83 /* MainScreenCompetitionCollectionViewCell.swift in Sources */,
 				F3C41BB229F6867F004ACA83 /* MainScreenInteractor.swift in Sources */,
 				F3C41B9E29F67A32004ACA83 /* SignUpScreenAssembly.swift in Sources */,
 				F3C41BB429F68686004ACA83 /* MainScreenRouter.swift in Sources */,
@@ -428,6 +448,7 @@
 				INFOPLIST_FILE = "SHIFT-LAB/Application/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -458,6 +479,7 @@
 				INFOPLIST_FILE = "SHIFT-LAB/Application/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

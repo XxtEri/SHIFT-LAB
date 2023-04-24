@@ -31,4 +31,8 @@ extension UIColor {
     static var borderButton: UIColor {
         #colorLiteral(red: 0.6588235294, green: 0.6588235294, blue: 0.6588235294, alpha: 1)
     }
+    
+    static var lineDisscusionScreen: UIColor {
+        #colorLiteral(red: 0.3536455631, green: 0.3536455333, blue: 0.3536455333, alpha: 1)
+    }
 }
