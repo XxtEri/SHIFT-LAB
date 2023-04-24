@@ -9,19 +9,34 @@
 /* Begin PBXBuildFile section */
 		F3C41B7729F675EB004ACA83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C41B7629F675EB004ACA83 /* AppDelegate.swift */; };
 		F3C41B7929F675EB004ACA83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C41B7829F675EB004ACA83 /* SceneDelegate.swift */; };
-		F3C41B7B29F675EB004ACA83 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C41B7A29F675EB004ACA83 /* ViewController.swift */; };
+		F3C41B7B29F675EB004ACA83 /* SignUpScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C41B7A29F675EB004ACA83 /* SignUpScreenViewController.swift */; };
 		F3C41B8029F675EF004ACA83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3C41B7F29F675EF004ACA83 /* Assets.xcassets */; };
 		F3C41B8329F675EF004ACA83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3C41B8129F675EF004ACA83 /* LaunchScreen.storyboard */; };
+		F3C41B9629F679FF004ACA83 /* SignUpScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C41B9529F679FF004ACA83 /* SignUpScreenView.swift */; };
+		F3C41B9829F67A13004ACA83 /* SignUpScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C41B9729F67A13004ACA83 /* SignUpScreenPresenter.swift */; };
+		F3C41B9A29F67A22004ACA83 /* SignUpScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C41B9929F67A22004ACA83 /* SignUpScreenInteractor.swift */; };
+		F3C41B9C29F67A2A004ACA83 /* SignUpScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C41B9B29F67A2A004ACA83 /* SignUpScreenRouter.swift */; };
+		F3C41B9E29F67A32004ACA83 /* SignUpScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C41B9D29F67A32004ACA83 /* SignUpScreenAssembly.swift */; };
+		F3C41BA129F67B59004ACA83 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F3C41BA029F67B59004ACA83 /* SnapKit */; };
+		F3C41BA429F67BE0004ACA83 /* UICustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C41BA329F67BE0004ACA83 /* UICustomTextField.swift */; };
+		F3C41BA729F67C07004ACA83 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C41BA629F67C07004ACA83 /* UIColorExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F3C41B7329F675EB004ACA83 /* SHIFT-LAB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SHIFT-LAB.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3C41B7629F675EB004ACA83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3C41B7829F675EB004ACA83 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F3C41B7A29F675EB004ACA83 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F3C41B7A29F675EB004ACA83 /* SignUpScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenViewController.swift; sourceTree = "<group>"; };
 		F3C41B7F29F675EF004ACA83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3C41B8229F675EF004ACA83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3C41B8429F675EF004ACA83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3C41B9529F679FF004ACA83 /* SignUpScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenView.swift; sourceTree = "<group>"; };
+		F3C41B9729F67A13004ACA83 /* SignUpScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenPresenter.swift; sourceTree = "<group>"; };
+		F3C41B9929F67A22004ACA83 /* SignUpScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenInteractor.swift; sourceTree = "<group>"; };
+		F3C41B9B29F67A2A004ACA83 /* SignUpScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenRouter.swift; sourceTree = "<group>"; };
+		F3C41B9D29F67A32004ACA83 /* SignUpScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenAssembly.swift; sourceTree = "<group>"; };
+		F3C41BA329F67BE0004ACA83 /* UICustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomTextField.swift; sourceTree = "<group>"; };
+		F3C41BA629F67C07004ACA83 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3C41BA129F67B59004ACA83 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,8 +71,8 @@
 			isa = PBXGroup;
 			children = (
 				F3C41B8A29F6760F004ACA83 /* Application */,
-				F3C41B7A29F675EB004ACA83 /* ViewController.swift */,
-				F3C41B8129F675EF004ACA83 /* LaunchScreen.storyboard */,
+				F3C41B9229F67931004ACA83 /* Services */,
+				F3C41B8D29F678C3004ACA83 /* Screens */,
 				F3C41B8B29F67616004ACA83 /* Resources */,
 			);
 			path = "SHIFT-LAB";
@@ -80,6 +96,77 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		F3C41B8C29F678B6004ACA83 /* SignUpScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F3C41B9D29F67A32004ACA83 /* SignUpScreenAssembly.swift */,
+				F3C41B7A29F675EB004ACA83 /* SignUpScreenViewController.swift */,
+				F3C41B9529F679FF004ACA83 /* SignUpScreenView.swift */,
+				F3C41B9729F67A13004ACA83 /* SignUpScreenPresenter.swift */,
+				F3C41B9929F67A22004ACA83 /* SignUpScreenInteractor.swift */,
+				F3C41B9B29F67A2A004ACA83 /* SignUpScreenRouter.swift */,
+			);
+			path = SignUpScreen;
+			sourceTree = "<group>";
+		};
+		F3C41B8D29F678C3004ACA83 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				F3C41B8E29F678CC004ACA83 /* Storyboards */,
+				F3C41B8C29F678B6004ACA83 /* SignUpScreen */,
+				F3C41BA229F67BCD004ACA83 /* CutomViews */,
+				F3C41BA529F67BEF004ACA83 /* Extensions */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		F3C41B8E29F678CC004ACA83 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F3C41B8129F675EF004ACA83 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		F3C41B9229F67931004ACA83 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F3C41B9329F6793B004ACA83 /* NetworkService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F3C41B9329F6793B004ACA83 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				F3C41B9429F67947004ACA83 /* Api */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		F3C41B9429F67947004ACA83 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		F3C41BA229F67BCD004ACA83 /* CutomViews */ = {
+			isa = PBXGroup;
+			children = (
+				F3C41BA329F67BE0004ACA83 /* UICustomTextField.swift */,
+			);
+			path = CutomViews;
+			sourceTree = "<group>";
+		};
+		F3C41BA529F67BEF004ACA83 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F3C41BA629F67C07004ACA83 /* UIColorExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -96,6 +183,9 @@
 			dependencies = (
 			);
 			name = "SHIFT-LAB";
+			packageProductDependencies = (
+				F3C41BA029F67B59004ACA83 /* SnapKit */,
+			);
 			productName = "SHIFT-LAB";
 			productReference = F3C41B7329F675EB004ACA83 /* SHIFT-LAB.app */;
 			productType = "com.apple.product-type.application";
@@ -124,6 +214,9 @@
 				Base,
 			);
 			mainGroup = F3C41B6A29F675EB004ACA83;
+			packageReferences = (
+				F3C41B9F29F67B59004ACA83 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = F3C41B7429F675EB004ACA83 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -150,9 +243,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3C41B7B29F675EB004ACA83 /* ViewController.swift in Sources */,
+				F3C41B7B29F675EB004ACA83 /* SignUpScreenViewController.swift in Sources */,
 				F3C41B7729F675EB004ACA83 /* AppDelegate.swift in Sources */,
+				F3C41B9A29F67A22004ACA83 /* SignUpScreenInteractor.swift in Sources */,
+				F3C41B9E29F67A32004ACA83 /* SignUpScreenAssembly.swift in Sources */,
+				F3C41B9629F679FF004ACA83 /* SignUpScreenView.swift in Sources */,
+				F3C41B9C29F67A2A004ACA83 /* SignUpScreenRouter.swift in Sources */,
+				F3C41B9829F67A13004ACA83 /* SignUpScreenPresenter.swift in Sources */,
 				F3C41B7929F675EB004ACA83 /* SceneDelegate.swift in Sources */,
+				F3C41BA429F67BE0004ACA83 /* UICustomTextField.swift in Sources */,
+				F3C41BA729F67C07004ACA83 /* UIColorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +466,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F3C41B9F29F67B59004ACA83 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F3C41BA029F67B59004ACA83 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3C41B9F29F67B59004ACA83 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F3C41B6B29F675EB004ACA83 /* Project object */;
 }

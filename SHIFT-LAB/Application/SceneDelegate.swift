@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         
-        let navigationController = ViewController()
+        let navigationController = SignUpScreenViewController()
         
         window.rootViewController = navigationController
         
