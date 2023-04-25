@@ -12,12 +12,15 @@ final class SignUpScreenViewController: UIViewController {
     //- MARK: Private properties
     
     private var ui: SignUpScreenView
+    private var presenter: SignUpScreenPresenterProtocol
     
     
     //- MARK: Inits
     
-    init() {
-        self.ui = SignUpScreenView()
+    init(presenter: SignUpScreenPresenterProtocol) {
+        self.presenter = presenter
+        
+        ui = SignUpScreenView()
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -54,4 +57,8 @@ private extension SignUpScreenViewController {
     func dismissKeyboard(sender: AnyObject) {
         self.view.endEditing(true)
     }
+}
+
+extension SignUpScreenViewController: SignUpScreenViewControllerProtocol {
+    
 }

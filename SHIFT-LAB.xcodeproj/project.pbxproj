@@ -31,6 +31,13 @@
 		F3C41BBB29F6B4D0004ACA83 /* SFProText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3C41BBA29F6B4D0004ACA83 /* SFProText-Regular.ttf */; };
 		F3E2825429F820D0001D4A6C /* AuthScreenValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E2825329F820D0001D4A6C /* AuthScreenValidator.swift */; };
 		F3E2825929F82310001D4A6C /* SignUpScreenPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E2825829F82310001D4A6C /* SignUpScreenPresenterProtocol.swift */; };
+		F3E2825B29F82429001D4A6C /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E2825A29F82429001D4A6C /* MainRouter.swift */; };
+		F3E2825D29F82447001D4A6C /* MainRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E2825C29F82447001D4A6C /* MainRouterProtocol.swift */; };
+		F3E2826029F824FB001D4A6C /* ScreenFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E2825F29F824FB001D4A6C /* ScreenFactoryProtocol.swift */; };
+		F3E2826229F82511001D4A6C /* ScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E2826129F82511001D4A6C /* ScreenFactory.swift */; };
+		F3E2826429F82995001D4A6C /* SignUpScreenViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E2826329F82995001D4A6C /* SignUpScreenViewControllerProtocol.swift */; };
+		F3E2826629F829E9001D4A6C /* SignUpScreenRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E2826529F829E9001D4A6C /* SignUpScreenRouterProtocol.swift */; };
+		F3E2826829F829FE001D4A6C /* SignUpScreenInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E2826729F829FE001D4A6C /* SignUpScreenInteractorProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +66,13 @@
 		F3C41BBA29F6B4D0004ACA83 /* SFProText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Regular.ttf"; sourceTree = "<group>"; };
 		F3E2825329F820D0001D4A6C /* AuthScreenValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenValidator.swift; sourceTree = "<group>"; };
 		F3E2825829F82310001D4A6C /* SignUpScreenPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenPresenterProtocol.swift; sourceTree = "<group>"; };
+		F3E2825A29F82429001D4A6C /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		F3E2825C29F82447001D4A6C /* MainRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouterProtocol.swift; sourceTree = "<group>"; };
+		F3E2825F29F824FB001D4A6C /* ScreenFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenFactoryProtocol.swift; sourceTree = "<group>"; };
+		F3E2826129F82511001D4A6C /* ScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenFactory.swift; sourceTree = "<group>"; };
+		F3E2826329F82995001D4A6C /* SignUpScreenViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenViewControllerProtocol.swift; sourceTree = "<group>"; };
+		F3E2826529F829E9001D4A6C /* SignUpScreenRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenRouterProtocol.swift; sourceTree = "<group>"; };
+		F3E2826729F829FE001D4A6C /* SignUpScreenInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenInteractorProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +150,9 @@
 		F3C41B8D29F678C3004ACA83 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				F3E2825E29F824DB001D4A6C /* Protocols */,
+				F3E2825A29F82429001D4A6C /* MainRouter.swift */,
+				F3E2826129F82511001D4A6C /* ScreenFactory.swift */,
 				F3C41B8E29F678CC004ACA83 /* Storyboards */,
 				F3C41B8C29F678B6004ACA83 /* SignUpScreen */,
 				F3C41BA829F6862F004ACA83 /* MainScreen */,
@@ -228,6 +245,18 @@
 			isa = PBXGroup;
 			children = (
 				F3E2825829F82310001D4A6C /* SignUpScreenPresenterProtocol.swift */,
+				F3E2826329F82995001D4A6C /* SignUpScreenViewControllerProtocol.swift */,
+				F3E2826529F829E9001D4A6C /* SignUpScreenRouterProtocol.swift */,
+				F3E2826729F829FE001D4A6C /* SignUpScreenInteractorProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		F3E2825E29F824DB001D4A6C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F3E2825C29F82447001D4A6C /* MainRouterProtocol.swift */,
+				F3E2825F29F824FB001D4A6C /* ScreenFactoryProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -312,17 +341,24 @@
 			files = (
 				F3E2825929F82310001D4A6C /* SignUpScreenPresenterProtocol.swift in Sources */,
 				F3C41B7B29F675EB004ACA83 /* SignUpScreenViewController.swift in Sources */,
+				F3E2826429F82995001D4A6C /* SignUpScreenViewControllerProtocol.swift in Sources */,
 				F3C41BAE29F6865E004ACA83 /* MainScreenViewController.swift in Sources */,
 				F3E2825429F820D0001D4A6C /* AuthScreenValidator.swift in Sources */,
+				F3E2826229F82511001D4A6C /* ScreenFactory.swift in Sources */,
 				F3C41BAA29F68644004ACA83 /* MainScreenAssembly.swift in Sources */,
+				F3E2825B29F82429001D4A6C /* MainRouter.swift in Sources */,
 				F3C41B7729F675EB004ACA83 /* AppDelegate.swift in Sources */,
 				F3C41B9A29F67A22004ACA83 /* SignUpScreenInteractor.swift in Sources */,
+				F3E2826029F824FB001D4A6C /* ScreenFactoryProtocol.swift in Sources */,
 				F3C41BB629F688EF004ACA83 /* MainScreenCompetitionCollectionViewCell.swift in Sources */,
 				F3C41BB229F6867F004ACA83 /* MainScreenInteractor.swift in Sources */,
 				F3C41B9E29F67A32004ACA83 /* SignUpScreenAssembly.swift in Sources */,
+				F3E2826829F829FE001D4A6C /* SignUpScreenInteractorProtocol.swift in Sources */,
+				F3E2825D29F82447001D4A6C /* MainRouterProtocol.swift in Sources */,
 				F3C41BB429F68686004ACA83 /* MainScreenRouter.swift in Sources */,
 				F3C41B9629F679FF004ACA83 /* SignUpScreenView.swift in Sources */,
 				F3C41B9C29F67A2A004ACA83 /* SignUpScreenRouter.swift in Sources */,
+				F3E2826629F829E9001D4A6C /* SignUpScreenRouterProtocol.swift in Sources */,
 				F3C41BAC29F68654004ACA83 /* MainScreenView.swift in Sources */,
 				F3C41BB029F68665004ACA83 /* MainScreenPresenter.swift in Sources */,
 				F3C41B9829F67A13004ACA83 /* SignUpScreenPresenter.swift in Sources */,

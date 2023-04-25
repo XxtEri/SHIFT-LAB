@@ -10,3 +10,7 @@ import Foundation
 class SignUpScreenInteractor {
     
 }
+
+extension SignUpScreenInteractor: SignUpScreenInteractorProtocol {
+    
+}

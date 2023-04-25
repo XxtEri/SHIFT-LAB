@@ -10,3 +10,7 @@ import Foundation
 class SignUpScreenRouter {
     
 }
+
+extension SignUpScreenRouter: SignUpScreenRouterProtocol {
+    
+}

@@ -5,8 +5,22 @@
 //  Created by Елена on 24.04.2023.
 //
 
-import Foundation
+import UIKit
 
-class SignUpScreenAssembly {
+enum SignUpScreenAssembly {
     
+    struct Parameters {
+        let completionHandler: (() -> Void)
+    }
+    
+    static func build(with parameters: Parameters) -> UIViewController {
+        let router = SignUpScreenRouter()
+        let interactor = SignUpScreenInteractor()
+        let presenter = SignUpScreenPresenter(router: router, interactor: interactor)
+        let viewController = SignUpScreenViewController(presenter: presenter)
+        
+        presenter.setView(view: viewController)
+        
+        return viewController
+    }
 }
