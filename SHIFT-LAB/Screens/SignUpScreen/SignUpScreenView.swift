@@ -137,6 +137,7 @@ final class SignUpScreenView: UIView {
         
         infoStack.addArrangedSubview(firstNameInputField)
         infoStack.addArrangedSubview(lastNameInputField)
+        infoStack.addArrangedSubview(birthdate)
         infoStack.addArrangedSubview(emailInputField)
         infoStack.addArrangedSubview(passwordInputField)
         infoStack.addArrangedSubview(confirmPasswordInputField)
