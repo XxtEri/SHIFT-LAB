@@ -34,8 +34,8 @@ class UICustomTextField: UITextField {
     func getCustomTextField(placeholder: String, isSecured: Bool) -> UICustomTextField {
         
         let view = UICustomTextField()
-        view.textColor = .textTextField
-        view.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        view.textColor = .white
+        view.font = UIFont(name: "SFProText-Regular", size: 14)
         view.isSecureTextEntry = isSecured
         
         view.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor : UIColor.textTextField])

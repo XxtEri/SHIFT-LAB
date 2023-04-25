@@ -70,12 +70,14 @@ final class SignUpScreenView: UIView {
         return view
     }()
     
-    private lazy var birthdate: UICustomTextField = {
+    private lazy var birthdateInputField: UICustomTextField = {
         var view = UICustomTextField()
         view = view.getCustomTextField(placeholder: "Дата рождения", isSecured: false)
             
         return view
     }()
+    
+    private let datePicker = UIDatePicker()
     
     private lazy var emailInputField: UICustomTextField = {
         var view = UICustomTextField()
@@ -137,16 +139,50 @@ final class SignUpScreenView: UIView {
         
         infoStack.addArrangedSubview(firstNameInputField)
         infoStack.addArrangedSubview(lastNameInputField)
-        infoStack.addArrangedSubview(birthdate)
+        infoStack.addArrangedSubview(birthdateInputField)
         infoStack.addArrangedSubview(emailInputField)
         infoStack.addArrangedSubview(passwordInputField)
         infoStack.addArrangedSubview(confirmPasswordInputField)
         
-        self.setup()
+        configureDatePicker()
+        setup()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    //- MARK: Private methods
+    
+    private func createToolbar() -> UIToolbar {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        doneButton.tintColor = .accentColorApplication
+        toolbar.setItems([doneButton], animated: true)
+        
+        return toolbar
+    }
+    
+    private func configureDatePicker() {
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.datePickerMode = .date
+        
+        birthdateInputField.textAlignment = .left
+        birthdateInputField.inputView = datePicker
+        birthdateInputField.inputAccessoryView = createToolbar()
+    }
+    
+    @objc
+    private func donePressed() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        
+        self.birthdateInputField.text = dateFormatter.string(from: datePicker.date)
+        self.endEditing(true)
     }
     
     

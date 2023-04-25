@@ -35,9 +35,23 @@ final class SignUpScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        setupToHideKeyboardOnTapOnView()
     }
-
-
 }
 
+private extension SignUpScreenViewController {
+    func setupToHideKeyboardOnTapOnView() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissKeyboard(sender:)))
+        
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    @objc
+    func dismissKeyboard(sender: AnyObject) {
+        self.view.endEditing(true)
+    }
+}
