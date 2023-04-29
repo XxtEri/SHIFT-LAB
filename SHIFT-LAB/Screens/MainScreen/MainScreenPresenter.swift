@@ -5,7 +5,6 @@
 //  Created by Елена on 24.04.2023.
 //
 
-import Foundation
 
 class MainScreenPresenter {
     weak var view: MainScreenViewControllerProtocol?
@@ -19,5 +18,15 @@ class MainScreenPresenter {
 }
 
 extension MainScreenPresenter: MainScreenPresenterProtocol {
+    func greetingButtonPressed() {
+        interactor.getUserName()
+    }
     
+    func sendNameUser(_ name: String) {
+        view?.showInfoUser(userName: name)
+    }
+    
+    func sendErrorAboutNameUser(errorMessage: String) {
+        view?.showErrorMessage(errorMessage: errorMessage)
+    }
 }

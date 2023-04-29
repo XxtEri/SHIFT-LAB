@@ -47,6 +47,30 @@ class MainScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        handler()
+    }
+    
+    func showAllert(title: String, message: String?) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Закрыть", style: .cancel)
+        
+        alertController.addAction(action)
+        alertController.view.tintColor = .accentColorApplication
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+}
+
+
+//- MARK: Private extensions
+
+private extension MainScreenViewController {
+    func handler() {
+        ui.greetingButtonCompletionHandler = { [ weak self ] in
+            guard let self = self else { return }
+            self.presenter.greetingButtonPressed()
+        }
     }
 }
 
@@ -54,7 +78,13 @@ class MainScreenViewController: UIViewController {
 //- MARK: Public extensions
 
 extension MainScreenViewController: MainScreenViewControllerProtocol {
+    func showInfoUser(userName: String) {
+        showAllert(title: "Привет, \(userName)!", message: nil)
+    }
     
+    func showErrorMessage(errorMessage: String) {
+        showAllert(title: "Внимание", message: errorMessage)
+    }
 }
 
 //- MARK: UICollectionViewDataSource

@@ -86,7 +86,7 @@ extension SignUpScreenInteractor: SignUpScreenInteractorProtocol {
         guard let errorsMessages = try? checkErrorValidData(user) else { return }
         
         if errorsMessages.isEmpty {
-            UserDefaults.standard.set("\(user.lastName) \(user.firstName)", forKey: "nameUser")
+            UserDefaults.standard.set("\(user.lastName) \(user.firstName)", forKey: "userName")
             presenter?.successfullRegistration()
             
             return

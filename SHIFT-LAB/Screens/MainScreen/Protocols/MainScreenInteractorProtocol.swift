@@ -9,4 +9,6 @@ import Foundation
 
 protocol MainScreenInteractorProtocol {
     var presenter: MainScreenPresenterProtocol? { get set }
+    
+    func getUserName()
 }

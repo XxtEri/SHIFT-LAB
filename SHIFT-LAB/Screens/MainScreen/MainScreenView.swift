@@ -47,6 +47,11 @@ class MainScreenView: UIView {
     }()
 
     
+    //- MARK: Public properties
+    
+    var greetingButtonCompletionHandler: (() -> Void)?
+    
+    
     //- MARK: Inits
     
     override init(frame: CGRect) {
@@ -110,9 +115,13 @@ private extension MainScreenView {
     }
     
     func configureActions() {
-        
+        greetingButton.addTarget(self, action: #selector(greetingButtonPressed), for: .touchUpInside)
     }
     
     
     //- MARK: Actions
+    @objc
+    private func greetingButtonPressed() {
+        greetingButtonCompletionHandler?()
+    }
 }

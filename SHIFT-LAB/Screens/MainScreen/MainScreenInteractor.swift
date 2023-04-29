@@ -14,5 +14,12 @@ class MainScreenInteractor {
 }
 
 extension MainScreenInteractor: MainScreenInteractorProtocol {
-    
+    func getUserName() {
+        if let name = UserDefaults.standard.string(forKey: "userName") {
+            presenter?.sendNameUser(name)
+            return
+        }
+        
+        presenter?.sendErrorAboutNameUser(errorMessage: "Произошла ошибка. Попробуйте повторить действие.")
+    }
 }
