@@ -11,6 +11,10 @@
 		F37DF60D29FD1712007FB0B5 /* MainScreenPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37DF60C29FD1712007FB0B5 /* MainScreenPresenterProtocol.swift */; };
 		F37DF60F29FD1746007FB0B5 /* MainScreenInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37DF60E29FD1746007FB0B5 /* MainScreenInteractorProtocol.swift */; };
 		F37DF61129FD1763007FB0B5 /* MainScreenRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37DF61029FD1763007FB0B5 /* MainScreenRouterProtocol.swift */; };
+		F37DF61629FD26AD007FB0B5 /* DataCompetition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37DF61529FD26AD007FB0B5 /* DataCompetition.swift */; };
+		F37DF61929FD26F5007FB0B5 /* Competition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37DF61829FD26F5007FB0B5 /* Competition.swift */; };
+		F37DF61C29FD2D0E007FB0B5 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37DF61B29FD2D0E007FB0B5 /* Observable.swift */; };
+		F37DF62029FD3069007FB0B5 /* CompetitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37DF61F29FD3069007FB0B5 /* CompetitionModel.swift */; };
 		F3C41B7729F675EB004ACA83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C41B7629F675EB004ACA83 /* AppDelegate.swift */; };
 		F3C41B7929F675EB004ACA83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C41B7829F675EB004ACA83 /* SceneDelegate.swift */; };
 		F3C41B7B29F675EB004ACA83 /* SignUpScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C41B7A29F675EB004ACA83 /* SignUpScreenViewController.swift */; };
@@ -51,6 +55,10 @@
 		F37DF60C29FD1712007FB0B5 /* MainScreenPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenPresenterProtocol.swift; sourceTree = "<group>"; };
 		F37DF60E29FD1746007FB0B5 /* MainScreenInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenInteractorProtocol.swift; sourceTree = "<group>"; };
 		F37DF61029FD1763007FB0B5 /* MainScreenRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenRouterProtocol.swift; sourceTree = "<group>"; };
+		F37DF61529FD26AD007FB0B5 /* DataCompetition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCompetition.swift; sourceTree = "<group>"; };
+		F37DF61829FD26F5007FB0B5 /* Competition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Competition.swift; sourceTree = "<group>"; };
+		F37DF61B29FD2D0E007FB0B5 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		F37DF61F29FD3069007FB0B5 /* CompetitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionModel.swift; sourceTree = "<group>"; };
 		F3C41B7329F675EB004ACA83 /* SHIFT-LAB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SHIFT-LAB.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3C41B7629F675EB004ACA83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3C41B7829F675EB004ACA83 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +118,38 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		F37DF61729FD26B6007FB0B5 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				F37DF61829FD26F5007FB0B5 /* Competition.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		F37DF61A29FD2CF6007FB0B5 /* Bindings */ = {
+			isa = PBXGroup;
+			children = (
+				F37DF61B29FD2D0E007FB0B5 /* Observable.swift */,
+			);
+			path = Bindings;
+			sourceTree = "<group>";
+		};
+		F37DF61D29FD2FEE007FB0B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F37DF61F29FD3069007FB0B5 /* CompetitionModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F37DF61E29FD3003007FB0B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F3E2826A29F8A8B2001D4A6C /* UserRegisterModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F3C41B6A29F675EB004ACA83 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				F3C41B8A29F6760F004ACA83 /* Application */,
+				F37DF61A29FD2CF6007FB0B5 /* Bindings */,
 				F3C41B9229F67931004ACA83 /* Services */,
 				F3C41B8D29F678C3004ACA83 /* Screens */,
 				F3C41B8B29F67616004ACA83 /* Resources */,
@@ -159,6 +200,7 @@
 		F3C41B8C29F678B6004ACA83 /* SignUpScreen */ = {
 			isa = PBXGroup;
 			children = (
+				F37DF61E29FD3003007FB0B5 /* Model */,
 				F3E2825529F82140001D4A6C /* Protocols */,
 				F3C41B9D29F67A32004ACA83 /* SignUpScreenAssembly.swift */,
 				F3C41B7A29F675EB004ACA83 /* SignUpScreenViewController.swift */,
@@ -166,7 +208,6 @@
 				F3C41B9729F67A13004ACA83 /* SignUpScreenPresenter.swift */,
 				F3C41B9929F67A22004ACA83 /* SignUpScreenInteractor.swift */,
 				F3C41B9B29F67A2A004ACA83 /* SignUpScreenRouter.swift */,
-				F3E2826A29F8A8B2001D4A6C /* UserRegisterModel.swift */,
 			);
 			path = SignUpScreen;
 			sourceTree = "<group>";
@@ -197,6 +238,7 @@
 		F3C41B9229F67931004ACA83 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F37DF61529FD26AD007FB0B5 /* DataCompetition.swift */,
 				F3E2825229F820AB001D4A6C /* ValidationService */,
 				F3C41B9329F6793B004ACA83 /* NetworkService */,
 			);
@@ -237,6 +279,8 @@
 		F3C41BA829F6862F004ACA83 /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
+				F37DF61D29FD2FEE007FB0B5 /* Model */,
+				F37DF61729FD26B6007FB0B5 /* Entity */,
 				F37DF60929FD16B2007FB0B5 /* Protocols */,
 				F3C41BA929F68644004ACA83 /* MainScreenAssembly.swift */,
 				F3C41BAD29F6865E004ACA83 /* MainScreenViewController.swift */,
@@ -376,13 +420,16 @@
 				F3C41B7729F675EB004ACA83 /* AppDelegate.swift in Sources */,
 				F3C41B9A29F67A22004ACA83 /* SignUpScreenInteractor.swift in Sources */,
 				F3E2826029F824FB001D4A6C /* ScreenFactoryProtocol.swift in Sources */,
+				F37DF61629FD26AD007FB0B5 /* DataCompetition.swift in Sources */,
 				F3C41BB629F688EF004ACA83 /* MainScreenCompetitionCollectionViewCell.swift in Sources */,
+				F37DF62029FD3069007FB0B5 /* CompetitionModel.swift in Sources */,
 				F3E2826B29F8A8B2001D4A6C /* UserRegisterModel.swift in Sources */,
 				F3C41BB229F6867F004ACA83 /* MainScreenInteractor.swift in Sources */,
 				F3C41B9E29F67A32004ACA83 /* SignUpScreenAssembly.swift in Sources */,
 				F3E2826829F829FE001D4A6C /* SignUpScreenInteractorProtocol.swift in Sources */,
 				F3E2825D29F82447001D4A6C /* MainRouterProtocol.swift in Sources */,
 				F37DF61129FD1763007FB0B5 /* MainScreenRouterProtocol.swift in Sources */,
+				F37DF61929FD26F5007FB0B5 /* Competition.swift in Sources */,
 				F3C41BB429F68686004ACA83 /* MainScreenRouter.swift in Sources */,
 				F3C41B9629F679FF004ACA83 /* SignUpScreenView.swift in Sources */,
 				F3C41B9C29F67A2A004ACA83 /* SignUpScreenRouter.swift in Sources */,
@@ -394,6 +441,7 @@
 				F3C41BB029F68665004ACA83 /* MainScreenPresenter.swift in Sources */,
 				F3E2826F29F8AD20001D4A6C /* AuthScreenError.swift in Sources */,
 				F3C41B9829F67A13004ACA83 /* SignUpScreenPresenter.swift in Sources */,
+				F37DF61C29FD2D0E007FB0B5 /* Observable.swift in Sources */,
 				F3C41B7929F675EB004ACA83 /* SceneDelegate.swift in Sources */,
 				F3C41BA429F67BE0004ACA83 /* UICustomTextField.swift in Sources */,
 				F3C41BA729F67C07004ACA83 /* UIColorExtensions.swift in Sources */,
