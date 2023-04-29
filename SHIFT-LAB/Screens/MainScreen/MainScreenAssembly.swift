@@ -8,9 +8,12 @@
 import UIKit
 
 class MainScreenAssembly {
+    struct Parameters {
+        let completionHandler: (() -> Void)
+    }
     
-    static func build() -> UIViewController {
-        let router = MainScreenRouter()
+    static func build(with parameters: Parameters) -> UIViewController {
+        let router = MainScreenRouter(goToSignUpScreenHandler: parameters.completionHandler)
         let interactor = MainScreenInteractor()
         let presenter = MainScreenPresenter(router: router, interactor: interactor)
         let viewController = MainScreenViewController(presenter: presenter)

@@ -13,4 +13,5 @@ protocol MainScreenInteractorProtocol {
     
     func getUserName()
     func loadCompetition()
+    func logout()
 }

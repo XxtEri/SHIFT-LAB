@@ -43,13 +43,41 @@ private extension MainRouter {
     }
     
     func startOnMainScreen() -> UIViewController {
-        let vc = screenFactory.makeMainScreen()
+        let completionHandler = { [weak self] in
+            guard let self = self else { return }
+            
+            self.showSignUpScreen()
+        }
+        
+        let parameters = MainScreenAssembly.Parameters(completionHandler: completionHandler)
+        let vc = screenFactory.makeMainScreen(with: parameters)
         
         return vc
     }
     
+    func showSignUpScreen() {
+        let completionHandler = { [weak self] in
+            guard let self = self else { return }
+            
+            self.showMainScreen()
+        }
+        
+        let parameters = SignUpScreenAssembly.Parameters(completionHandler: completionHandler)
+        let vc = screenFactory.makeSignUpScreen(with: parameters)
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func showMainScreen() {
-        let vc = screenFactory.makeMainScreen()
+        let completionHandler = { [weak self] in
+            guard let self = self else { return }
+            
+            self.showSignUpScreen()
+        }
+        
+        let parameters = MainScreenAssembly.Parameters(completionHandler: completionHandler)
+        let vc = screenFactory.makeMainScreen(with: parameters)
         
         navigationController?.setNavigationBarHidden(true, animated: false)
         navigationController?.pushViewController(vc, animated: true)

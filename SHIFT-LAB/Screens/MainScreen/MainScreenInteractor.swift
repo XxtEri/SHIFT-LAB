@@ -28,4 +28,8 @@ extension MainScreenInteractor: MainScreenInteractorProtocol {
         
         competition.updateModel(with: dataCompetition.getCompetition())
     }
+    
+    func logout() {
+        UserDefaults.standard.removeObject(forKey: "userName")
+    }
 }

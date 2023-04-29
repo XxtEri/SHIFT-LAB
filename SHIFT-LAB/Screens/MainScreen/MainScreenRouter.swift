@@ -8,9 +8,15 @@
 import Foundation
 
 class MainScreenRouter {
+    private var goToSignUpScreenHandler: (() -> Void)?
     
+    init (goToSignUpScreenHandler: (() -> Void)?) {
+        self.goToSignUpScreenHandler = goToSignUpScreenHandler
+    }
 }
 
 extension MainScreenRouter: MainScreenRouterProtocol {
-    
+    func goToSignUpScreen() {
+        goToSignUpScreenHandler?()
+    }
 }

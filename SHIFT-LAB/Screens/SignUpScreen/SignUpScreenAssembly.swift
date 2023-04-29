@@ -8,7 +8,6 @@
 import UIKit
 
 enum SignUpScreenAssembly {
-    
     struct Parameters {
         let completionHandler: (() -> Void)
     }

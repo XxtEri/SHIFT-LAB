@@ -16,7 +16,7 @@ extension ScreenFactory: ScreenFactoryProtocol {
         return SignUpScreenAssembly.build(with: parameters)
     }
     
-    func makeMainScreen() -> UIViewController {
-        return MainScreenAssembly.build()
+    func makeMainScreen(with parameters: MainScreenAssembly.Parameters) -> UIViewController {
+        return MainScreenAssembly.build(with: parameters)
     }
 }

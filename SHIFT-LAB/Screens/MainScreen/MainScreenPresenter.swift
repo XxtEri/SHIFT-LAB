@@ -40,6 +40,11 @@ extension MainScreenPresenter: MainScreenPresenterProtocol {
         interactor.loadCompetition()
     }
     
+    func logout() {
+        interactor.logout()
+        router.goToSignUpScreen()
+    }
+    
     func sendNameUser(_ name: String) {
         view?.showInfoUser(userName: name)
     }

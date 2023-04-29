@@ -16,5 +16,6 @@ protocol MainScreenPresenterProtocol: AnyObject {
     func loadCompetition()
     func sendNameUser(_ name: String)
     func sendCompetitionToView(_ competitions: [CompetitionModel])
+    func logout()
     func sendErrorAboutNameUser(errorMessage: String)
 }

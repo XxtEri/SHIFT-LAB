@@ -27,6 +27,7 @@ class MainScreenViewController: UIViewController {
     
     var presenter: MainScreenPresenterProtocol
     var competitions = [CompetitionModel]()
+    var logoutCompletionHandler: (() -> Void)?
     
     //- MARK: Inits
     
@@ -60,6 +61,14 @@ class MainScreenViewController: UIViewController {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "Закрыть", style: .cancel)
         
+        if message == nil {
+            let logout = UIAlertAction(title: "Выход", style: .default) { _ in
+                self.logoutCompletionHandler?()
+            }
+            
+            alertController.addAction(logout)
+        }
+        
         alertController.addAction(action)
         alertController.view.tintColor = .accentColorApplication
         
@@ -78,7 +87,14 @@ private extension MainScreenViewController {
     func handler() {
         ui.greetingButtonCompletionHandler = { [ weak self ] in
             guard let self = self else { return }
+            
             self.presenter.greetingButtonPressed()
+        }
+        
+        logoutCompletionHandler = { [ weak self ] in
+            guard let self = self else { return }
+            
+            self.presenter.logout()
         }
     }
 }

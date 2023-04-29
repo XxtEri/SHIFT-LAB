@@ -8,7 +8,6 @@
 import Foundation
 
 class SignUpScreenRouter {
-    
     private var goToMainScreenHandler: (() -> Void)?
     
     init (goToMainScreenHandler: (() -> Void)?) {
