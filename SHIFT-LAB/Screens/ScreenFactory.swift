@@ -7,9 +7,16 @@
 
 import UIKit
 
-final class ScreenFactory: ScreenFactoryProtocol {
-    
+final class ScreenFactory {
+
+}
+
+extension ScreenFactory: ScreenFactoryProtocol {
     func makeSignUpScreen(with parameters: SignUpScreenAssembly.Parameters) -> UIViewController {
         return SignUpScreenAssembly.build(with: parameters)
+    }
+    
+    func makeMainScreen() -> UIViewController {
+        return MainScreenAssembly.build()
     }
 }

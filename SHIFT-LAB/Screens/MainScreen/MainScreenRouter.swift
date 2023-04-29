@@ -10,3 +10,7 @@ import Foundation
 class MainScreenRouter {
     
 }
+
+extension MainScreenRouter: MainScreenRouterProtocol {
+    
+}

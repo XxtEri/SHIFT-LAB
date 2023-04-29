@@ -12,6 +12,7 @@ class MainScreenViewController: UIViewController {
     //- MARK: Private properties
     
     private var ui: MainScreenView
+    var presenter: MainScreenPresenterProtocol
     
     private enum Metrics {
         static let itemsInRow = 2
@@ -25,12 +26,13 @@ class MainScreenViewController: UIViewController {
     
     //- MARK: Inits
     
-    init() {
-        self.ui = MainScreenView()
+    init(presenter: MainScreenPresenterProtocol) {
+        self.presenter = presenter
+        ui = MainScreenView()
         
         super.init(nibName: nil, bundle: nil)
         
-        self.ui.configureCollectionDelegates(delegate: self, dataSource: self)
+        ui.configureCollectionDelegates(delegate: self, dataSource: self)
     }
     
     required init?(coder: NSCoder) {
@@ -50,6 +52,10 @@ class MainScreenViewController: UIViewController {
 
 
 //- MARK: Public extensions
+
+extension MainScreenViewController: MainScreenViewControllerProtocol {
+    
+}
 
 //- MARK: UICollectionViewDataSource
 

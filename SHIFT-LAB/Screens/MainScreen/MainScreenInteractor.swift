@@ -8,5 +8,11 @@
 import Foundation
 
 class MainScreenInteractor {
+    weak var presenter: MainScreenPresenterProtocol?
+    
+    init() { }
+}
+
+extension MainScreenInteractor: MainScreenInteractorProtocol {
     
 }

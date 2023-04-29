@@ -86,7 +86,9 @@ extension SignUpScreenViewController: SignUpScreenViewControllerProtocol {
         }
         
         let alertController = UIAlertController(title: "Внимание!", message: errors, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Закрыть", style: .cancel) { action in }
+        let action = UIAlertAction(title: "Закрыть", style: .cancel) { action in
+            self.turnOnEnabledButton()
+        }
         
         alertController.addAction(action)
         alertController.view.tintColor = .accentColorApplication

@@ -9,4 +9,5 @@ import UIKit
 
 protocol ScreenFactoryProtocol {
     func makeSignUpScreen(with parameters: SignUpScreenAssembly.Parameters) -> UIViewController
+    func makeMainScreen() -> UIViewController
 }

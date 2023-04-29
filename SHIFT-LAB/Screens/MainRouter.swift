@@ -35,6 +35,9 @@ class MainRouter: MainRouterProtocol {
 
 private extension MainRouter {
     func showMainScreen() {
+        let vc = screenFactory.makeMainScreen()
         
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
