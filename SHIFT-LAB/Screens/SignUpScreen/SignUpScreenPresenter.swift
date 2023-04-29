@@ -36,6 +36,11 @@ extension SignUpScreenPresenter: SignUpScreenPresenterProtocol {
         return false
     }
     
+    func successfullRegistration() {
+        view?.turnOnEnabledButton()
+        router.goToMainScreen()
+    }
+    
     func setErrorMessages(errorMessages: [String]) {
         view?.showErrorMessages(errorMessages: errorMessages)
     }

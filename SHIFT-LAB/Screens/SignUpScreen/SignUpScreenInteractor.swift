@@ -49,10 +49,10 @@ class SignUpScreenInteractor {
             errorMesssages.append(AuthScreenError.emptyFieldPassword.rawValue)
             
         } catch AuthScreenError.notValidPasswordCountSymbol {
-            errorMesssages.append(AuthScreenError.notValidPassword.rawValue)
+            errorMesssages.append(AuthScreenError.notValidPasswordCountSymbol.rawValue)
             
         } catch AuthScreenError.notValidPassword {
-            errorMesssages.append(AuthScreenError.notValidPasswordCountSymbol.rawValue)
+            errorMesssages.append(AuthScreenError.notValidPassword.rawValue)
             
         }
         
@@ -86,7 +86,8 @@ extension SignUpScreenInteractor: SignUpScreenInteractorProtocol {
         guard let errorsMessages = try? checkErrorValidData(user) else { return }
         
         if errorsMessages.isEmpty {
-            //запрос на регистрацию
+            UserDefaults.standard.set("\(user.lastName) \(user.firstName)", forKey: "nameUser")
+            presenter?.successfullRegistration()
             
             return
         }

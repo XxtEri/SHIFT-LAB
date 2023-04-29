@@ -8,5 +8,5 @@
 import Foundation
 
 protocol SignUpScreenRouterProtocol {
-    
+    func goToMainScreen()
 }

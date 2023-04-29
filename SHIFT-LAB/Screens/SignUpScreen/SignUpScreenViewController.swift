@@ -73,6 +73,11 @@ private extension SignUpScreenViewController {
 }
 
 extension SignUpScreenViewController: SignUpScreenViewControllerProtocol {
+    
+    func turnOnEnabledButton() {
+        ui.turnOnEnabledButton()
+    }
+    
     func showErrorMessages(errorMessages: [String]) {
         var errors = String()
         

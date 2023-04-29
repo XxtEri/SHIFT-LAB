@@ -189,6 +189,10 @@ final class SignUpScreenView: UIView {
         activityIndicator.stopAnimating()
         activityIndicator.alpha = 0
     }
+    
+    func turnOnEnabledButton() {
+        authButton.isEnabled = true
+    }
 }
 
 
@@ -248,6 +252,9 @@ private extension SignUpScreenView {
                                      birthdate: birthdateInputField.text ?? String(),
                                      password: passwordInputField.text ?? String(),
                                      confirmPassword: confirmPasswordInputField.text ?? String())
+        
+        authButton.isEnabled = false
+        
         authButtonPressed?(user)
     }
 }

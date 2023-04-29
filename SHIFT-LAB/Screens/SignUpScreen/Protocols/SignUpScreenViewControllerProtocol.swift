@@ -10,5 +10,6 @@ import Foundation
 protocol SignUpScreenViewControllerProtocol: AnyObject {
     var presenter: SignUpScreenPresenterProtocol { get set }
     
+    func turnOnEnabledButton()
     func showErrorMessages(errorMessages: [String])
 }

@@ -14,7 +14,7 @@ enum SignUpScreenAssembly {
     }
     
     static func build(with parameters: Parameters) -> UIViewController {
-        let router = SignUpScreenRouter()
+        let router = SignUpScreenRouter(goToMainScreenHandler: parameters.completionHandler)
         let interactor = SignUpScreenInteractor()
         let presenter = SignUpScreenPresenter(router: router, interactor: interactor)
         let viewController = SignUpScreenViewController(presenter: presenter)

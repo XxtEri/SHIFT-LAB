@@ -18,7 +18,9 @@ class MainRouter: MainRouterProtocol {
     
     func start() -> UINavigationController {
         let completionHandler = { [weak self] in
+            guard let self = self else { return }
             
+            self.showMainScreen()
         }
         
         let parameters = SignUpScreenAssembly.Parameters(completionHandler: completionHandler)
@@ -32,5 +34,7 @@ class MainRouter: MainRouterProtocol {
 }
 
 private extension MainRouter {
-    
+    func showMainScreen() {
+        
+    }
 }
