@@ -165,6 +165,7 @@ final class SignUpScreenView: UIView {
     private func configureDatePicker() {
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.datePickerMode = .date
+        datePicker.maximumDate = Date()
         
         birthdateInputField.textAlignment = .left
         birthdateInputField.inputView = datePicker
