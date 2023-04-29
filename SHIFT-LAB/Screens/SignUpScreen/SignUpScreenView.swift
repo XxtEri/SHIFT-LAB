@@ -104,6 +104,8 @@ final class SignUpScreenView: UIView {
         
         view.setTitle("Зарегистрироваться", for: .normal)
         view.setTitleColor(.white, for: .normal)
+        
+        view.isEnabled = false
             
         return view
     }()
