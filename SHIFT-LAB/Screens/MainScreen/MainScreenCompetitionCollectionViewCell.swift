@@ -92,7 +92,7 @@ private extension MainScreenCompetitionCollectionViewCell {
         }
         
         timeCompetition.snp.makeConstraints { make in
-            make.top.equalTo(titleCompetition.snp.bottom).inset(20)
+            make.top.equalTo(titleCompetition.snp.bottom).inset(15)
             make.horizontalEdges.equalTo(titleCompetition.snp.horizontalEdges)
         }
         
