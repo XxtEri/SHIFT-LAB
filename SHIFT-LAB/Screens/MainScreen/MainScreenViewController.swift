@@ -11,18 +11,22 @@ class MainScreenViewController: UIViewController {
     
     //- MARK: Private properties
     
-    private var ui: MainScreenView
-    var presenter: MainScreenPresenterProtocol
-    
     private enum Metrics {
         static let itemsInRow = 2
         
         static let viewInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         static let insets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        static let lineSpace: CGFloat = 20
+        static let lineSpace: CGFloat = 15
         static let itemSpace: CGFloat = 23
     }
     
+    private var ui: MainScreenView
+    
+    
+    //- MARK: Public properties
+    
+    var presenter: MainScreenPresenterProtocol
+    var competitions = [CompetitionModel]()
     
     //- MARK: Inits
     
@@ -49,6 +53,7 @@ class MainScreenViewController: UIViewController {
         super.viewDidLoad()
         
         handler()
+        presenter.loadCompetition()
     }
     
     func showAllert(title: String, message: String?) {
@@ -59,6 +64,10 @@ class MainScreenViewController: UIViewController {
         alertController.view.tintColor = .accentColorApplication
         
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func reloadData() {
+        ui.reloadData()
     }
 }
 
@@ -85,6 +94,11 @@ extension MainScreenViewController: MainScreenViewControllerProtocol {
     func showErrorMessage(errorMessage: String) {
         showAllert(title: "Внимание", message: errorMessage)
     }
+    
+    func sendCompetition(_ competitions: [CompetitionModel]) {
+        self.competitions = competitions
+        reloadData()
+    }
 }
 
 
@@ -92,7 +106,7 @@ extension MainScreenViewController: MainScreenViewControllerProtocol {
 
 extension MainScreenViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        competitions.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -100,7 +114,7 @@ extension MainScreenViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        cell.configureCell()
+        cell.configureCell(with: competitions[indexPath.row])
         
         return cell
     }

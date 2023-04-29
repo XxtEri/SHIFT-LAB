@@ -14,6 +14,20 @@ class MainScreenPresenter {
     init(router: MainScreenRouterProtocol, interactor: MainScreenInteractorProtocol) {
         self.router = router
         self.interactor = interactor
+        
+        bindListener()
+    }
+}
+
+private extension MainScreenPresenter {
+    func bindListener() {
+        interactor.competition.subscribe { competitions in
+            let competitionsModel = competitions.map {
+                CompetitionModel(id: $0.id, name: $0.name, startTime: $0.startTime, endTime: $0.endTime, url: $0.url)
+            }
+            
+            self.sendCompetitionToView(competitionsModel)
+        }
     }
 }
 
@@ -22,8 +36,16 @@ extension MainScreenPresenter: MainScreenPresenterProtocol {
         interactor.getUserName()
     }
     
+    func loadCompetition() {
+        interactor.loadCompetition()
+    }
+    
     func sendNameUser(_ name: String) {
         view?.showInfoUser(userName: name)
+    }
+    
+    func sendCompetitionToView(_ competitions: [CompetitionModel]) {
+        view?.sendCompetition(competitions)
     }
     
     func sendErrorAboutNameUser(errorMessage: String) {

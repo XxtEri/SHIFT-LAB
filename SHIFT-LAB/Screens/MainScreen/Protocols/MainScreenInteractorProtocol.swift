@@ -9,6 +9,8 @@ import Foundation
 
 protocol MainScreenInteractorProtocol {
     var presenter: MainScreenPresenterProtocol? { get set }
+    var competition: Observable<[Competition]> { get set }
     
     func getUserName()
+    func loadCompetition()
 }

@@ -10,7 +10,7 @@ import Foundation
 class MainScreenInteractor {
     weak var presenter: MainScreenPresenterProtocol?
     
-    init() { }
+    var competition = Observable<[Competition]>()
 }
 
 extension MainScreenInteractor: MainScreenInteractorProtocol {
@@ -21,5 +21,11 @@ extension MainScreenInteractor: MainScreenInteractorProtocol {
         }
         
         presenter?.sendErrorAboutNameUser(errorMessage: "Произошла ошибка. Попробуйте повторить действие.")
+    }
+    
+    func loadCompetition() {
+        let dataCompetition = DataCompetition()
+        
+        competition.updateModel(with: dataCompetition.getCompetition())
     }
 }

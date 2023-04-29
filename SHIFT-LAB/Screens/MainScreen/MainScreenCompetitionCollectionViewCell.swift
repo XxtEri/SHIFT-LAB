@@ -68,9 +68,9 @@ class MainScreenCompetitionCollectionViewCell: UICollectionViewCell {
     
     //- MARK: Public methods
     
-    func configureCell() {
-        titleCompetition.text = "Nananaaklhjsndmkp;asjodk;oasjdlasna"
-        timeCompetition.text = "12:30 - 13:30"
+    func configureCell(with model: CompetitionModel) {
+        titleCompetition.text = model.name
+        timeCompetition.text = "\(model.startTime) - \(model.endTime)"
     }
 }
 

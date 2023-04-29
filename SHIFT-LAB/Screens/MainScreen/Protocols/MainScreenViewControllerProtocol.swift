@@ -12,4 +12,5 @@ protocol MainScreenViewControllerProtocol: AnyObject {
     
     func showInfoUser(userName: String)
     func showErrorMessage(errorMessage: String)
+    func sendCompetition(_ competitions: [CompetitionModel])
 }

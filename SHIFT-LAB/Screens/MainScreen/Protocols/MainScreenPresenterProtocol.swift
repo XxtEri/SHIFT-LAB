@@ -13,6 +13,8 @@ protocol MainScreenPresenterProtocol: AnyObject {
     var interactor: MainScreenInteractorProtocol { get set }
     
     func greetingButtonPressed()
+    func loadCompetition()
     func sendNameUser(_ name: String)
+    func sendCompetitionToView(_ competitions: [CompetitionModel])
     func sendErrorAboutNameUser(errorMessage: String)
 }

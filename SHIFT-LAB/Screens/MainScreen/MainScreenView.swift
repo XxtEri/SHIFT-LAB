@@ -41,7 +41,9 @@ class MainScreenView: UIView {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         
         collection.register(MainScreenCompetitionCollectionViewCell.self, forCellWithReuseIdentifier: MainScreenCompetitionCollectionViewCell.reuseIdentifier)
+        
         collection.backgroundColor = .backgroundApplication
+        collection.showsVerticalScrollIndicator = false
         
         return collection
     }()
@@ -74,6 +76,10 @@ class MainScreenView: UIView {
     func configureCollectionDelegates(delegate: UICollectionViewDelegate, dataSource: UICollectionViewDataSource) {
         competitionCollectionView.delegate = delegate
         competitionCollectionView.dataSource = dataSource
+    }
+    
+    func reloadData() {
+        competitionCollectionView.reloadData()
     }
 }
 
