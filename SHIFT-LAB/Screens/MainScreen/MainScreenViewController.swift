@@ -87,6 +87,7 @@ extension MainScreenViewController: MainScreenViewControllerProtocol {
     }
 }
 
+
 //- MARK: UICollectionViewDataSource
 
 extension MainScreenViewController: UICollectionViewDataSource {
@@ -103,15 +104,17 @@ extension MainScreenViewController: UICollectionViewDataSource {
         
         return cell
     }
-    
-    
 }
+
 
 //- MARK: UICollectionViewDelegate
 
 extension MainScreenViewController: UICollectionViewDelegate {
     
 }
+
+
+//- MARK: UICollectionViewDelegateFlowLayout
 
 extension MainScreenViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath ) -> CGSize {
