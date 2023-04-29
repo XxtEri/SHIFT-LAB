@@ -7,6 +7,8 @@
 
 import Foundation
 
-protocol SignUpScreenViewControllerProtocol {
+protocol SignUpScreenViewControllerProtocol: AnyObject {
+    var presenter: SignUpScreenPresenterProtocol { get set }
     
+    func showErrorMessages(errorMessages: [String])
 }

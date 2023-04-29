@@ -79,23 +79,16 @@ final class SignUpScreenView: UIView {
     
     private let datePicker = UIDatePicker()
     
-    private lazy var emailInputField: UICustomTextField = {
-        var view = UICustomTextField()
-        view = view.getCustomTextField(placeholder: "E-mail", isSecured: false)
-            
-        return view
-    }()
-        
     private lazy var passwordInputField: UICustomTextField = {
         var view = UICustomTextField()
-        view = view.getCustomTextField(placeholder: "Пароль", isSecured: false)
+        view = view.getCustomTextField(placeholder: "Пароль", isSecured: true)
 
         return view
     }()
     
     private lazy var confirmPasswordInputField: UICustomTextField = {
         var view = UICustomTextField()
-        view = view.getCustomTextField(placeholder: "Повторите пароль", isSecured: false)
+        view = view.getCustomTextField(placeholder: "Повторите пароль", isSecured: true)
 
         return view
     }()
@@ -124,7 +117,7 @@ final class SignUpScreenView: UIView {
     
     //- MARK: Public properties
     
-    var changeScreenHandler: (() -> Void)?
+    var authButtonPressed: ((UserRegisterModel) -> Void)?
 
     
     //- MARK: Inits
@@ -140,7 +133,6 @@ final class SignUpScreenView: UIView {
         infoStack.addArrangedSubview(firstNameInputField)
         infoStack.addArrangedSubview(lastNameInputField)
         infoStack.addArrangedSubview(birthdateInputField)
-        infoStack.addArrangedSubview(emailInputField)
         infoStack.addArrangedSubview(passwordInputField)
         infoStack.addArrangedSubview(confirmPasswordInputField)
         
@@ -243,11 +235,19 @@ private extension SignUpScreenView {
     }
     
     func configureAction() {
-        
-        //authButton.addTarget(self, action: #selector(signUp(_:)), for: .touchDown)
+        authButton.addTarget(self, action: #selector(signUp), for: .touchDown)
     }
     
     
     //- MARK: Actions
 
+    @objc
+    func signUp() {
+        let user = UserRegisterModel(firstName: firstNameInputField.text ?? String(),
+                                     lastName: lastNameInputField.text ?? String(),
+                                     birthdate: birthdateInputField.text ?? String(),
+                                     password: passwordInputField.text ?? String(),
+                                     confirmPassword: confirmPasswordInputField.text ?? String())
+        authButtonPressed?(user)
+    }
 }

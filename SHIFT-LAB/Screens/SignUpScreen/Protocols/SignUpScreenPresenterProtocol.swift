@@ -7,6 +7,11 @@
 
 import Foundation
 
-protocol SignUpScreenPresenterProtocol {
+protocol SignUpScreenPresenterProtocol: AnyObject {
+    var view: SignUpScreenViewControllerProtocol? { get set }
+    var router: SignUpScreenRouterProtocol { get set }
+    var interactor: SignUpScreenInteractorProtocol { get set }
     
+    func signUp(user: UserRegisterModel)
+    func setErrorMessages(errorMessages: [String])
 }

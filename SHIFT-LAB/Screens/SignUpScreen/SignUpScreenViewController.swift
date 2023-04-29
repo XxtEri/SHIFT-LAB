@@ -12,7 +12,7 @@ final class SignUpScreenViewController: UIViewController {
     //- MARK: Private properties
     
     private var ui: SignUpScreenView
-    private var presenter: SignUpScreenPresenterProtocol
+    var presenter: SignUpScreenPresenterProtocol
     
     
     //- MARK: Inits
@@ -40,6 +40,19 @@ final class SignUpScreenViewController: UIViewController {
         super.viewDidLoad()
         
         setupToHideKeyboardOnTapOnView()
+        
+        handler()
+    }
+}
+
+
+private extension SignUpScreenViewController {
+    func handler() {
+        ui.authButtonPressed = { [ weak self ] user in
+            guard let self = self else { return }
+            
+            self.presenter.signUp(user: user)
+        }
     }
 }
 
@@ -60,5 +73,19 @@ private extension SignUpScreenViewController {
 }
 
 extension SignUpScreenViewController: SignUpScreenViewControllerProtocol {
-    
+    func showErrorMessages(errorMessages: [String]) {
+        var errors = String()
+        
+        errorMessages.forEach { message in
+            errors.append("\n" + message + "\n")
+        }
+        
+        let alertController = UIAlertController(title: "Внимание!", message: errors, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Закрыть", style: .cancel) { action in }
+        
+        alertController.addAction(action)
+        alertController.view.tintColor = .accentColorApplication
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
 }

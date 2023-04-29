@@ -19,6 +19,7 @@ enum SignUpScreenAssembly {
         let presenter = SignUpScreenPresenter(router: router, interactor: interactor)
         let viewController = SignUpScreenViewController(presenter: presenter)
         
+        interactor.setPresenter(presenter: presenter)
         presenter.setView(view: viewController)
         
         return viewController

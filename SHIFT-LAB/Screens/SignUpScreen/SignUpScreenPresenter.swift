@@ -9,20 +9,34 @@ import UIKit
 
 class SignUpScreenPresenter {
     
-    private var view: SignUpScreenViewControllerProtocol?
-    private var router: SignUpScreenRouterProtocol
-    private var interactor: SignUpScreenInteractorProtocol
+    weak var view: SignUpScreenViewControllerProtocol?
+    var router: SignUpScreenRouterProtocol
+    var interactor: SignUpScreenInteractorProtocol
     
     init(router: SignUpScreenRouterProtocol, interactor: SignUpScreenInteractorProtocol) {
         self.router = router
         self.interactor = interactor
     }
     
-    func setView(view: SignUpScreenViewControllerProtocol) {
+    func setView(view: SignUpScreenViewController) {
         self.view = view
     }
 }
 
 extension SignUpScreenPresenter: SignUpScreenPresenterProtocol {
+    func signUp(user: UserRegisterModel) {
+        interactor.signUp(user: user)
+    }
     
+    func checkNotEmptyFieldsData(_ data: UserRegisterModel) -> Bool {
+        if interactor.checkValidData(data) {
+            return true
+        }
+        
+        return false
+    }
+    
+    func setErrorMessages(errorMessages: [String]) {
+        view?.showErrorMessages(errorMessages: errorMessages)
+    }
 }

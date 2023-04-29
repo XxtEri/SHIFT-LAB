@@ -8,5 +8,8 @@
 import Foundation
 
 protocol SignUpScreenInteractorProtocol {
+    var presenter: SignUpScreenPresenterProtocol? { get set }
     
+    func signUp(user: UserRegisterModel)
+    func checkValidData(_ data: UserRegisterModel) -> Bool
 }
