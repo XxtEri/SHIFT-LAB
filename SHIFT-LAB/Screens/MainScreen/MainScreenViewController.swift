@@ -140,7 +140,11 @@ extension MainScreenViewController: UICollectionViewDataSource {
 //- MARK: UICollectionViewDelegate
 
 extension MainScreenViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let url = URL(string: competitions[indexPath.row].url) {
+            UIApplication.shared.open(url)
+        }
+    }
 }
 
 
