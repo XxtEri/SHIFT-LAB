@@ -21,12 +21,6 @@ class SignUpScreenPresenter {
     func setView(view: SignUpScreenViewController) {
         self.view = view
     }
-}
-
-extension SignUpScreenPresenter: SignUpScreenPresenterProtocol {
-    func signUp(user: UserRegisterModel) {
-        interactor.signUp(user: user)
-    }
     
     func checkNotEmptyFieldsData(_ data: UserRegisterModel) -> Bool {
         if interactor.checkValidData(data) {
@@ -35,9 +29,23 @@ extension SignUpScreenPresenter: SignUpScreenPresenterProtocol {
         
         return false
     }
+}
+
+extension SignUpScreenPresenter: SignUpScreenPresenterProtocol {
+    func signUp(user: UserRegisterModel) {
+        view?.setEnabledButton(enable: false)
+        interactor.signUp(user: user)
+    }
+    
+    func checkValidData(_ data: UserRegisterModel) {
+        let isValidData = checkNotEmptyFieldsData(data)
+        
+        view?.setEnabledButton(enable: isValidData)
+        view?.changeLayoutAuthButton(validData: isValidData)
+    }
     
     func successfullRegistration() {
-        view?.turnOnEnabledButton()
+        view?.setEnabledButton(enable: true)
         router.goToMainScreen()
     }
     

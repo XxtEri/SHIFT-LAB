@@ -53,6 +53,12 @@ private extension SignUpScreenViewController {
             
             self.presenter.signUp(user: user)
         }
+        
+        ui.editedTextFieldHandler = { [ weak self ] user in
+            guard let self = self else { return }
+            
+            self.presenter.checkValidData(user)
+        }
     }
 }
 
@@ -73,9 +79,13 @@ private extension SignUpScreenViewController {
 }
 
 extension SignUpScreenViewController: SignUpScreenViewControllerProtocol {
+
+    func setEnabledButton(enable: Bool) {
+        ui.setEnabledButton(enabled: enable)
+    }
     
-    func turnOnEnabledButton() {
-        ui.turnOnEnabledButton()
+    func changeLayoutAuthButton(validData: Bool) {
+        ui.changeLayoutAuthButton(validData: validData)
     }
     
     func showErrorMessages(errorMessages: [String]) {
@@ -87,7 +97,7 @@ extension SignUpScreenViewController: SignUpScreenViewControllerProtocol {
         
         let alertController = UIAlertController(title: "Внимание!", message: errors, preferredStyle: .alert)
         let action = UIAlertAction(title: "Закрыть", style: .cancel) { action in
-            self.turnOnEnabledButton()
+            self.setEnabledButton(enable: true)
         }
         
         alertController.addAction(action)

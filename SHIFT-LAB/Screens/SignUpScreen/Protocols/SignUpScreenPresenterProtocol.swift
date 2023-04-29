@@ -13,7 +13,7 @@ protocol SignUpScreenPresenterProtocol: AnyObject {
     var interactor: SignUpScreenInteractorProtocol { get set }
     
     func signUp(user: UserRegisterModel)
-    func checkNotEmptyFieldsData(_ data: UserRegisterModel) -> Bool
+    func checkValidData(_ data: UserRegisterModel)
     func successfullRegistration()
     func setErrorMessages(errorMessages: [String])
 }

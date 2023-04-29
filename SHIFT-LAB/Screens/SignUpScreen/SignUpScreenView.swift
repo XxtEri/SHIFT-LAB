@@ -95,12 +95,15 @@ final class SignUpScreenView: UIView {
         
     private lazy var authButton: UIButton = {
         let view = UIButton()
-        view.backgroundColor = .accentColorApplication
         view.layer.cornerRadius = Metrics.buttonCornerRadius
         view.layer.borderWidth = Metrics.buttonsBorderWidth
+        view.layer.borderWidth = Metrics.buttonsBorderWidth
+        view.layer.borderColor = UIColor.accentColorApplication.cgColor
+        view.backgroundColor = .clear
+        view.contentEdgeInsets = Metrics.authButtonEdgeInsets
+        
         view.setTitle("Зарегистрироваться", for: .normal)
         view.setTitleColor(.white, for: .normal)
-        view.contentEdgeInsets = Metrics.authButtonEdgeInsets
             
         return view
     }()
@@ -118,7 +121,8 @@ final class SignUpScreenView: UIView {
     //- MARK: Public properties
     
     var authButtonPressed: ((UserRegisterModel) -> Void)?
-
+    var editedTextFieldHandler: ((UserRegisterModel) -> Void)?
+    
     
     //- MARK: Inits
     
@@ -180,18 +184,21 @@ final class SignUpScreenView: UIView {
     
     //- MARK: Public methods
     
-    func startAnumateIndicator() {
-        activityIndicator.startAnimating()
-        activityIndicator.alpha = 1
+    func setEnabledButton(enabled: Bool) {
+        authButton.isEnabled = enabled
     }
     
-    func stopAnimateIndicator() {
-        activityIndicator.stopAnimating()
-        activityIndicator.alpha = 0
-    }
-    
-    func turnOnEnabledButton() {
-        authButton.isEnabled = true
+    func changeLayoutAuthButton(validData: Bool) {
+        if !validData {
+            authButton.layer.borderWidth = Metrics.buttonsBorderWidth
+            authButton.layer.borderColor = UIColor.accentColorApplication.cgColor
+            authButton.backgroundColor = .clear
+            
+        } else {
+            authButton.layer.borderWidth = 0
+            authButton.layer.borderColor = nil
+            authButton.backgroundColor = .accentColorApplication
+        }
     }
 }
 
@@ -240,6 +247,11 @@ private extension SignUpScreenView {
     
     func configureAction() {
         authButton.addTarget(self, action: #selector(signUp), for: .touchDown)
+        firstNameInputField.addTarget(self, action: #selector(editedTextField), for: .editingChanged)
+        lastNameInputField.addTarget(self, action: #selector(editedTextField), for: .editingChanged)
+        birthdateInputField.addTarget(self, action: #selector(editedTextField), for: .editingChanged)
+        passwordInputField.addTarget(self, action: #selector(editedTextField), for: .editingChanged)
+        confirmPasswordInputField.addTarget(self, action: #selector(editedTextField), for: .editingChanged)
     }
     
     
@@ -253,8 +265,17 @@ private extension SignUpScreenView {
                                      password: passwordInputField.text ?? String(),
                                      confirmPassword: confirmPasswordInputField.text ?? String())
         
-        authButton.isEnabled = false
-        
         authButtonPressed?(user)
+    }
+    
+    @objc
+    func editedTextField() {
+        let user = UserRegisterModel(firstName: firstNameInputField.text ?? String(),
+                                     lastName: lastNameInputField.text ?? String(),
+                                     birthdate: birthdateInputField.text ?? String(),
+                                     password: passwordInputField.text ?? String(),
+                                     confirmPassword: confirmPasswordInputField.text ?? String())
+        
+        editedTextFieldHandler?(user)
     }
 }

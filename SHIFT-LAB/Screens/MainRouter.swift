@@ -17,7 +17,7 @@ class MainRouter: MainRouterProtocol {
     }
     
     func start() -> UINavigationController {
-        let nameUser = UserDefaults.standard.string(forKey: "nameUser")
+        let nameUser = UserDefaults.standard.string(forKey: "userName")
         
         let startVC = nameUser == nil ? startOnSignUpScreen() : startOnMainScreen()
         let navigationController = UINavigationController(rootViewController: startVC)
