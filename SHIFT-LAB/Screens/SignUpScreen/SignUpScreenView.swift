@@ -117,6 +117,8 @@ final class SignUpScreenView: UIView {
         return indicator
     }()
     
+    private var isOpenKeyboard = false
+    
     
     //- MARK: Public properties
     
@@ -248,11 +250,15 @@ private extension SignUpScreenView {
     
     func configureAction() {
         authButton.addTarget(self, action: #selector(signUp), for: .touchDown)
+        
         firstNameInputField.addTarget(self, action: #selector(editedTextField), for: .editingChanged)
         lastNameInputField.addTarget(self, action: #selector(editedTextField), for: .editingChanged)
         birthdateInputField.addTarget(self, action: #selector(editedTextField), for: .editingChanged)
         passwordInputField.addTarget(self, action: #selector(editedTextField), for: .editingChanged)
         confirmPasswordInputField.addTarget(self, action: #selector(editedTextField), for: .editingChanged)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     
@@ -278,5 +284,25 @@ private extension SignUpScreenView {
                                      confirmPassword: confirmPasswordInputField.text ?? String())
         
         editedTextFieldHandler?(user)
+    }
+    
+    @objc
+    func keyboardWillShow(notification: NSNotification) {
+        if !isOpenKeyboard{
+            if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+                let keyboardHeight = keyboardFrame.cgRectValue.height
+                let bottomSpace = self.frame.height - (authButton.frame.origin.y + authButton.frame.height)
+                
+                self.frame.origin.y -= keyboardHeight - bottomSpace + 40
+                
+                isOpenKeyboard = true
+            }
+        }
+    }
+    
+    @objc
+    func keyboardWillHide() {
+        self.frame.origin.y = 0
+        isOpenKeyboard = false
     }
 }
