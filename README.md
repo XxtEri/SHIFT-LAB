@@ -18,3 +18,11 @@ This application is a test task in the CFT SHIFT Lab
 - And by clicking on the "Welcome" button, you can see your first and last name entered earlier during registration and the buttons to close the dialog box and log out of the account
 
 ## Screenshots
+<p>
+    <img src="Screenshots/Sign_Up_Screen.PNG" width="250" height="540">
+    <img src="Screenshots/Sign_Up_Screen_2.PNG" width="250" height="540">
+</p>
+<p>
+    <img src="Screenshots/Main_Screen.PNG" width="250" height="540">
+    <img src="Screenshots/Main_Screen_2.PNG" width="250" height="540">
+</p>
